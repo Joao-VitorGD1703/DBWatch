@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - TIMESCALE_DSN=postgres://postgres:postgres@timescaledb:5432/dbxray?sslmode=disable
+      - CONFIG_FILE=/app/config.yaml
+    volumes:
+      - ./config.yaml:/app/config.yaml
+    depends_on:
+      - timescaledb
+    networks:
+      - dbx-network
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dbxray
+    ports:
+      - "5434:5432"
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+    networks:
+      - dbx-network
+
+  dummy-postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=dummy
+      - POSTGRES_DB=dummy_db
+    ports:
+      - "5433:5432"
+    networks:
+      - dbx-network
+    volumes:
+      - ./init-dummy.sql:/docker-entrypoint-initdb.d/init-dummy.sql
+    command: postgres -c 'shared_preload_libraries=pg_stat_statements' -c 'pg_stat_statements.track=all'
+
+  dummy-mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=dummy
+      - MYSQL_DATABASE=dummy_db
+    ports:
+      - "3307:3306"
+    networks:
+      - dbx-network
+
+  web:
+    image: node:20
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    environment: []
+    volumes:
+      - ./web:/app
+    depends_on:
+      - api
+    networks:
+      - dbx-network
+    # Development mode overrides
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  timescaledb_data:
+
+networks:
+  dbx-network:
+    driver: bridge

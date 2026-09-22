@@ -1,0 +1,44 @@
+@use '@carbon/react';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600&display=swap');
+
+body {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  background-color: var(--cds-background);
+  color: var(--cds-text-primary);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dbwatch-dashboard {
+  padding-top: 4rem; /* For the fixed Header */
+  padding-bottom: 2rem;
+}
+
+.metric-value {
+  font-family: 'Roboto Mono', Menlo, Courier, monospace;
+}
+
+.chart-container {
+  height: 350px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.query-cell {
+  font-family: 'Roboto Mono', monospace;
+  background: var(--cds-layer-02);
+  padding: 0.5rem;
+  color: var(--cds-text-primary);
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.custom-progress {
+  margin-top: -1rem;
+  padding: 0 1rem 1rem;
+}

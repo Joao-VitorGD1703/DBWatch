@@ -1,0 +1,31 @@
+# Aplicação Node / Vite
+web/node_modules/
+web/dist/
+web/build/
+web/.env*
+web/.vite-temp/
+
+# Go
+/dbx-ray
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Dados Sensíveis / Temporários
+save.txt
+api_logs.txt
+config.yaml
+*.log
+.env
+.env.local
+
+# Docker / Volumes
+timescaledb_data/
+*.sqlite
+*.db
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
