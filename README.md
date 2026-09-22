@@ -1,6 +1,6 @@
-# DBX-Ray 👁️
+# DBWatch 👁️
 
-**DBX-Ray** é uma ferramenta premium de monitoramento de bancos de dados em tempo real. Ela foi construída com um foco intenso em design e eficiência, fornecendo insights instantâneos sobre a saúde, queries lentas e sessões ativas da sua infraestrutura de dados.
+**DBWatch** é uma ferramenta premium de monitoramento de bancos de dados em tempo real. Ela foi construída com um foco intenso em design e eficiência, fornecendo insights instantâneos sobre a saúde, queries lentas e sessões ativas da sua infraestrutura de dados.
 
 Utilizando **Go** no backend para uma coleta de métricas de alta performance e **React (Carbon Design System)** no frontend, o DBX-Ray oferece um dashboard poderoso e fluído, capaz de identificar gargalos antes que eles derrubem sua aplicação.
 
@@ -33,7 +33,7 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 Baixe o código-fonte para a sua máquina e entre na pasta:
 ```bash
 git clone <URL_DO_SEU_REPOSITORIO>
-cd dbx-ray
+cd DBWatch
 ```
 
 ### 3. Inicie o Ambiente de Desenvolvimento
