@@ -2,7 +2,7 @@
 
 **DBWatch** é uma ferramenta premium de monitoramento de bancos de dados em tempo real. Ela foi construída com um foco intenso em design e eficiência, fornecendo insights instantâneos sobre a saúde, queries lentas e sessões ativas da sua infraestrutura de dados.
 
-Utilizando **Go** no backend para uma coleta de métricas de alta performance e **React (Carbon Design System)** no frontend, o DBX-Ray oferece um dashboard poderoso e fluído, capaz de identificar gargalos antes que eles derrubem sua aplicação.
+Utilizando **Go** no backend para uma coleta de métricas de alta performance e **React (Carbon Design System)** no frontend, o DBWatch oferece um dashboard poderoso e fluído, capaz de identificar gargalos antes que eles derrubem sua aplicação.
 
 ## 🚀 Recursos Principais
 
